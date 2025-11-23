@@ -21,6 +21,7 @@ def main():
             if event.type == pg.QUIT: return
         screen.blit(bg_img, [-tmr, 0])
         key_lst = pg.key.get_pressed()
+        kk_rct.move_ip((-1, 0))
         if key_lst[pg.K_UP]:
             kk_rct.move_ip((0, -1))
         elif key_lst[pg.K_DOWN]:
@@ -28,12 +29,13 @@ def main():
         elif key_lst[pg.K_LEFT]:
             kk_rct.move_ip((-1, 0))
         elif key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((1, 0))
+            kk_rct.move_ip((2, 0))
             
         hor = tmr%3200
         screen.blit(bg_img, [-hor, 0])
         screen.blit(bg_img2, [-hor + 1600, 0])
         screen.blit(bg_img, [-hor + 3200, 0])
+        # screen.blit(kk_img, [300, 200])
         screen.blit(kk_img, kk_rct)
         pg.display.update()
         tmr += 1        
