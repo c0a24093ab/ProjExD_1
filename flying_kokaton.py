@@ -25,7 +25,6 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         screen.blit(bg_img, [-tmr, 0])
-        screen.blit(kk_rct, [300-tmr, 0])
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
             kk_rct.move_ip((0, -1))
